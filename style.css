@@ -1,1 +1,48 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
+body {
+  background: rgb(18, 18, 18);
+  color: whitesmoke;
+  font-family: karla sans-serif;
+  line-height: 1.5;
+}
+
+/* TOP HEADER */
+
+header{
+	min-height: 100vh;
+	padding: 30px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+/* TOP LINE */
+
+.top-line {
+	display: flex;
+	justify-content: space-between;
+	font-size: 14px;
+	letter-spacing: 0.02em;
+}
+
+
+
+/* TITLE */
+
+h1 {
+  font-size: 15vw;
+  line-height: 0.82;
+  letter-spacing: -0.07em;
+  font-weight: 700;
+}
+
+h1 span {
+  display: block;
+  font-style: italic;
+  color: bisque;
+}
