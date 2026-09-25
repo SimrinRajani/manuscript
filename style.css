@@ -4,11 +4,18 @@
   padding: 0;
 }
 
+/*base variables*/
+:root {
+	--base-type: 1rem
+
+}
+
+
 body {
-  background: rgb(18, 18, 18);
-  color: whitesmoke;
-  font-family: karla sans-serif;
-  line-height: 1.5;
+  background: rgb(230, 230, 230);
+  color: black;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  line-height: 2;
 }
 
 /* TOP HEADER */
@@ -16,17 +23,15 @@ body {
 header{
 	min-height: 100vh;
 	padding: 30px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
+	display: inline;
 }
 
 /* TOP LINE */
 
 .top-line {
-	display: flex;
+	display: inline;
 	justify-content: space-between;
-	font-size: 14px;
+	font-size: 1rem;
 	letter-spacing: 0.02em;
 }
 
@@ -40,32 +45,28 @@ h1 {
   letter-spacing: -0.07em;
   font-weight: 700;
 }
-
-h1 span {
-  display: block;
+h1 em {
   font-style: italic;
-  color: bisque;
+  color:rgb(255, 60, 0) ;
 }
 
 /* NAV */
-nav {
-  display: flex;
-  gap: 10px;
-}
 
 nav a {
   display: inline-block;
   padding: 10px 16px;
-  border: 1px solid white;
-  color: white;
+  border: 1px solid black;
+  color: black;
   text-decoration: none;
   font-size: 13px;
 }
 
 nav a:hover {
-  background: bisque;
+  background: rgb(78, 167, 192);
   color: black;
 }
+
+/*ARTICLE TITLE 'ROCK'*/
 
 article h2 {
   font-size: 80px;
@@ -88,13 +89,13 @@ article p {
 }
 
 article blockquote {
-  margin: 100px -100px;
+  margin: 100px 0x;
   font-family: Georgia, serif;
-  font-size: 4vw;
+  font-size: clamp(40px, 6vw, 100px);
   line-height: 0.9;
   font-style: italic;
   text-align: center;
-  color: rgb(236, 191, 137);
+  color: rgb(33, 113, 156);
 }
 
 /* RESPONSE*/
@@ -102,6 +103,8 @@ article blockquote {
 #response {
   padding: 180px 30px 150px;
 }
+
+/* RESPONSE TITLE 'ME'*/
 
 #response h2 {
   font-size: 80px;
@@ -130,13 +133,13 @@ article blockquote {
 
 #response blockquote {
   max-width: 1000px;
-  margin: 140px auto;
+  margin: 100px 0;
   font-family: Georgia, serif;
-  font-size: 6vw;
+  font-size: clamp(40px, 6vw, 100px);
   line-height: 0.9;
   font-style: italic;
   text-align: center;
-  color: rgb(236, 191, 137);
+  color: rgb(255, 60, 0);
 }
 
 a {
