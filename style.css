@@ -4,10 +4,28 @@
   padding: 0;
 }
 
+html {
+  font-size: 20px;
+}
+
 /*base variables*/
 :root {
-	--base-type: 1rem
 
+	--text-s: 0.875rem;
+	--text-base: 1rem;
+	--text-l: 1.25rem;
+	--text-xl: 1.5rem;
+	--text-2xl: 2rem;
+	--text-3xl: 3rem;
+	--text-4xl: 5rem;
+	--text-gigantic: 8rem;
+
+	--space-xs: 0.5rem;
+	--space-s: 1rem;
+	--space-m: 2rem;
+	--space-l: 4rem;
+	--space-xl: 8rem;
+	--space-2xl: 12rem;
 }
 
 
@@ -16,14 +34,14 @@ body {
   color: black;
   font-family: Georgia, 'Times New Roman', Times, serif;
   line-height: 2;
+  font-size: var(--text-base);
 }
 
 /* TOP HEADER */
 
 header{
 	min-height: 100vh;
-	padding: 30px;
-	display: inline;
+	padding: var(--space-s);
 }
 
 /* TOP LINE */
@@ -40,7 +58,7 @@ header{
 /* TITLE */
 
 h1 {
-  font-size: 15vw;
+  font-size: var(--text-gigantic);
   line-height: 0.82;
   letter-spacing: -0.07em;
   font-weight: 700;
@@ -135,7 +153,7 @@ article blockquote {
   max-width: 1000px;
   margin: 100px 0;
   font-family: Georgia, serif;
-  font-size: clamp(40px, 6vw, 100px);
+  font-size: 6vw;
   line-height: 0.9;
   font-style: italic;
   text-align: center;
@@ -143,6 +161,6 @@ article blockquote {
 }
 
 a {
-  color: #fcc7ee;
+  color: #ff00bb;
   text-decoration: underline;
 }
