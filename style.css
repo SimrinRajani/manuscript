@@ -135,9 +135,9 @@ article blockquote {
 /* RESPONSE*/
 
 #response {
-  max-width: 45rem;
+   max-width: 45rem;
   margin-block: var(--space-l);
-  margin-inline-start:var(--space-3xl);
+  margin-inline-start:var(--space-l) ;
   padding: var(--space-m);
 }
 
@@ -175,7 +175,7 @@ article blockquote {
   text-align: center;
   color: rgb(255, 60, 0);
   margin-block: var(--space-m);
-  max width: 70rem;
+  max-width: 70rem;
 }
 
 a {
