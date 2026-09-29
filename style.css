@@ -1,10 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@400..900&family=DM+Serif+Display:ital@0;1&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&family=IBM+Plex+Mono:wght@400;500&display=swap");
+
 html {
   font-size: 20px;
 }
 
-/*base variables*/
+/*BASE VARIABLE SYSTEM*/
 :root {
-
+	/*TEXT SIZING VARIABLES*/
 	--text-s: 0.875rem;
 	--text-base: 1rem;
 	--text-l: 1.25rem;
@@ -15,6 +17,7 @@ html {
 	--text-gigantic: 8rem;
 	--watermark: 10rem;
 
+	/*SPACE SIZING VARIABLES*/
 	--space-xs: 0.5rem;
 	--space-s: 1rem;
 	--space-m: 2rem;
@@ -22,16 +25,39 @@ html {
 	--space-xl: 8rem;
 	--space-2xl: 12rem;
 	--space-3xl: 20rem;
+
+	/*FONT VARIABLES*/
+	--serif: "DM Serif Display", "Iowan Old Style", Georgia, serif;
+	--body: "Source Serif 4", "Iowan Old Style", Georgia, serif;
+	--sans: "Archivo", "Helvetica Neue", Arial, sans-serif;
+	--mono: "IBM Plex Mono", "SF Mono", Menlo, monospace;
+
+	/*COLOR VARIABLES*/
+	--coral: rgb(255, 60, 0);
+	--bright-pink:#ff00bb;
+	--light-pink:#ddb1d2;
+	--teal:darkcyan;
+	--goldish:rgb(240, 170, 49);
+	--paper:rgb(218, 217, 217);
 }
 
 
 body {
-  background: rgb(230, 230, 230);
+  background: rgb(218, 217, 217);
   color: black;
   font-family: Georgia, 'Times New Roman', Times, serif;
   line-height: 2;
   font-size: var(--text-base);
 }
+a {
+  color: #ff00bb;
+  text-decoration: underline;
+}
+
+em{
+	font-style: italic;
+}
+
 
 /* TOP HEADER */
 
@@ -50,19 +76,20 @@ header{
 	background-color:#ddb1d2;
 	padding:var(--space-m);
 	margin-block-end: var(--space-l);
-}
 
-	.top-line p{
+	/* TOP LINE TEXT*/
+	p{
 		display: inline-block;
 		text-align:left;
 		width: 30%;
 	}
-
-	.top-line time{
+	/* TOP LINE TIME*/
+	time{
 		display: inline-block;
 		text-align:right;
 		width: 50%;
 	}
+}
 
 
 /* TITLE */
@@ -101,35 +128,35 @@ nav li{
 }
 
 /*ARTICLE TITLE 'ROCK'*/
-
-article h2 {
-  font-size: var(--text-4xl);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.9em;
-}
-
-article {
+#article{
   max-width: 45rem;
   margin-block: var(--space-l);
   margin-inline-start:var(--space-l) ;
   padding: var(--space-m);
-}
 
-article p {
-  font-size: var(--text-base);
-  line-height: 1.6;
-  margin-block-end:var(--space-m);
-}
-
-article blockquote {
-  margin-block:var(--space-m);
-  font-family: Georgia, serif;
-  font-size: var(--text-3xl);
-  line-height: 0.9;
-  font-style: italic;
-  text-align: center;
-  color: darkcyan;
+	/* ARTICLE HEADING 'ROCK'*/
+	h2 {
+	font-size: var(--text-4xl);
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.9em;
+	}
+	/* ARTICLE BODY*/
+	p {
+	font-size: var(--text-base);
+	line-height: 1.6;
+	margin-block-end:var(--space-m);
+	}
+	/* ARTICLE BLOCKQUOTES*/
+	blockquote {
+	margin-block:var(--space-m);
+	font-family: Georgia, serif;
+	font-size: var(--text-3xl);
+	line-height: 0.9;
+	font-style: italic;
+	text-align: center;
+	color: darkcyan;
+	}
 }
 
 /* RESPONSE*/
@@ -139,56 +166,50 @@ article blockquote {
   margin-block: var(--space-l);
   margin-inline-start:var(--space-l) ;
   padding: var(--space-m);
+
+
+	/* RESPONSE TITLE 'ME'*/
+		h2 {
+	font-size: var(--text-4xl);
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.9em;
+	margin-bottom: var(--space-m);
+		}
+	/* RESPONSE SUBTITLE*/
+		h3 {
+	max-width: 50rem;
+	font-family: Georgia, serif;
+	font-size: var(--text-2xl);
+	line-height: 1.2;
+	font-weight: 400;
+	font-style: bold;
+	margin-bottom: var(--space-m);
+		}
+	/* RESPONSE BODY*/
+		p {
+	font-size: var(--text-base);
+	line-height: 1.6;
+	margin-block-end:var(--space-m);
+		}
+	/* RESPONSE BLOCKQUOTES*/
+		blockquote {
+	font-family: Georgia, serif;
+	font-size: var(--text-3xl);
+	line-height: 1.5;
+	font-style: bold;
+	text-align: center;
+	color: rgb(255, 60, 0);
+	margin-block: var(--space-m);
+	max-width: 70rem;
+		}
 }
 
-/* RESPONSE TITLE 'ME'*/
-
-#response h2 {
-  font-size: var(--text-4xl);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.9em;
-  margin-bottom: var(--space-m);
-}
-
-#response h3 {
-  max-width: 50rem;
-  font-family: Georgia, serif;
-  font-size: var(--text-2xl);
-  line-height: 1.2;
-  font-weight: 400;
-  font-style: bold;
-  margin-bottom: var(--space-m);
-}
-
-#response p {
-  font-size: var(--text-base);
-  line-height: 1.6;
-  margin-block-end:var(--space-m);
-}
-
-#response blockquote {
-  font-family: Georgia, serif;
-  font-size: var(--text-3xl);
-  line-height: 1.5;
-  font-style: bold;
-  text-align: center;
-  color: rgb(255, 60, 0);
-  margin-block: var(--space-m);
-  max-width: 70rem;
-}
-
-a {
-  color: #ff00bb;
-  text-decoration: underline;
-}
-
-em{
-	font-style: italic;
-}
 
 footer{
-	font-size: var(--watermark);
+	font-size: var(--text-2xl);
 	color: black;
 	opacity: 20%;
+	text-transform: uppercase;
+	margin-inline: -50%;
 }
