@@ -38,7 +38,7 @@ html {
 	--bright-pink:#ff00bb;
 	--light-pink:#ddb1d2;
 	--teal:darkcyan;
-	--goldish:rgb(240, 170, 49);
+	--goldish:rgb(234, 198, 137);
 	--paper:rgb(240, 240, 240);
 }
 
@@ -147,78 +147,149 @@ header{
 /*ARTICLE TITLE 'ROCK'*/
 #article{
   margin-block: var(--space-l);
-  margin-inline-start:var(--space-l) ;
+  margin-inline:var(--space-xl) ;
   padding: var(--space-m);
 
-	/* ARTICLE HEADING 'ROCK'*/
+	/* ARTICLE HEADING 'ROCK' (hollow style on purpose)*/
 	h2 {
-	font-size: var(--text-4xl);
-	font-weight: 700;
+	font-size: var(--text-5xl);
+	font-weight: 900;
 	text-transform: uppercase;
-	letter-spacing: 0.9em;
+	letter-spacing: -0.3rem;
+	font-family: var(--sans);
+	color: transparent; /*hides fill*/
+	-webkit-text-stroke: 0.1rem black;/*adds a black outline to the text*/
 	}
 	/* ARTICLE BODY*/
 	p {
 	font-size: var(--text-base);
 	line-height: 1.6;
 	margin-block-end:var(--space-m);
+	font-family: var(--body);
+	}
+	q{
+		background-color:var(--goldish) ;
 	}
 	/* ARTICLE BLOCKQUOTES*/
 	blockquote {
 	margin-block:var(--space-m);
-	font-family: Georgia, serif;
-	font-size: var(--text-3xl);
-	line-height: 0.9;
+	font-family: var(--serif);
+	font-size: var(--text-2xl);
+	line-height: 1.2;
 	font-style: italic;
-	text-align: center;
-	color: darkcyan;
+	color: var(--teal);
+	padding-block: var(--space-m);
+	padding-left: var(--space-m);
+	border-left:var(--light-pink) solid 0.6rem;
 	}
+	/* EVER OTHER ARTICLE BLOCKQUOTE*/
+	blockquote:nth-of-type(even) {
+	margin-block:var(--space-m);
+	font-family: var(--serif);
+	font-size: var(--text-2xl);
+	line-height: 1.2;
+	font-style: italic;
+	color: var(--coral);
+	padding-block: var(--space-m);
+	padding-right: var(--space-m);
+	border-left: 0;
+	border-right:var(--light-pink) solid 0.6rem;
+	text-align: right;
+	}
+	/* LAST ARTICLE BLOCKQUOTE*/
+	blockquote:last-of-type {
+	margin-block:var(--space-m);
+	font-family: var(--sans);
+	font-size: var(--text-3xl);
+	line-height: 1.2;
+	color: var(--black);
+	padding-block: var(--space-m);
+	padding-right: var(--space-m);
+	border-left: 0;
+	border-right: 0;
+	border-bottom:var(--light-pink) solid 0.6rem;
+	text-align: justify;
+	text-transform: uppercase;
+	font-style: normal;
+	font-weight: 700;
+	}
+
 }
 
 /* RESPONSE*/
 
 #response {
-  padding: var(--space-m);
-  color: var(--paper);
-  background: rgb(11, 11, 11);
+  background:linear-gradient(to bottom, var(--paper) 0, black 24rem);
+  padding-top: var(--space-l);
+  padding-inline: var(--space-2xl);
+  color:var(--paper);
+  margin-block: var(--space-l);
 
-
-	/* RESPONSE TITLE 'ME'*/
-		h2 {
-	font-size: var(--text-4xl);
-	font-weight: 700;
+	/* RESPONSE HEADING 'ME'*/
+	h2 {
+	font-size: var(--text-5xl);
+	font-weight: 900;
 	text-transform: uppercase;
-	letter-spacing: 0.9em;
-	margin-bottom: var(--space-m);
-		}
-	/* RESPONSE SUBTITLE*/
-		h3 {
-
-	font-family: Georgia, serif;
-	font-size: var(--text-2xl);
-	line-height: 1.2;
-	font-weight: 400;
-	font-style: bold;
-	margin-bottom: var(--space-m);
-		}
+	letter-spacing: -0.3rem;
+	font-family: var(--sans);
+	color:var(--paper);
+	}
 	/* RESPONSE BODY*/
-		p {
+	p {
 	font-size: var(--text-base);
 	line-height: 1.6;
-	margin-inline: var(--space-2xl);
-		}
+	margin-block-end:var(--space-m);
+	font-family: var(--body);
+	}
+	q{
+		background-color:var(--goldish) ;
+	}
 	/* RESPONSE BLOCKQUOTES*/
-		blockquote {
-	font-family: Georgia, serif;
+	blockquote {
+	margin-block:var(--space-m);
+	font-family: var(--serif);
 	font-size: var(--text-3xl);
-	line-height: 1.5;
-	font-style: bold;
-	text-align: center;
-	color: rgb(255, 60, 0);
-	margin-block: var(--space-m);
-	max-width: 70rem;
-		}
+	line-height: 0.9;
+	font-style: italic;
+	color: var(--teal);
+	padding-block: var(--space-m);
+	padding-left: var(--space-m);
+	border-left:var(--light-pink) solid 0.6rem;
+	}
+	/* EVER OTHER RESPONSE BLOCKQUOTE*/
+	blockquote:nth-of-type(even) {
+	margin-block:var(--space-m);
+	font-family: var(--serif);
+	font-size: var(--text-3xl);
+	line-height: 0.9;
+	font-style: italic;
+	color: var(--coral);
+	padding-block: var(--space-m);
+	padding-right: var(--space-m);
+	border-left: 0;
+	border-right:var(--light-pink) solid 0.6rem;
+	text-align: right;
+	}
+	/* LAST RESPONSE BLOCKQUOTE*/
+	blockquote:last-of-type {
+	margin-block:var(--space-m);
+	font-family: var(--sans);
+	font-size: var(--text-3xl);
+	line-height: 0.9;
+	color: var(--black);
+	padding-block: var(--space-m);
+	padding-right: var(--space-m);
+	border-left: 0;
+	border-right: 0;
+	border-bottom:var(--light-pink) solid 0.6rem;
+	text-align: justify;
+	text-transform: uppercase;
+	font-style: normal;
+	font-weight: 700;
+	}
+
 }
+
 
 
 footer{
