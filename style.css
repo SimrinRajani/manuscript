@@ -190,7 +190,7 @@ header{
 	font-size: var(--text-2xl);
 	line-height: 1.2;
 	font-style: italic;
-	color: var(--teal);
+	color: black;
 	padding-block: var(--space-m);
 	padding-left: var(--space-m);
 	border-left:var(--teal) solid 0.6rem;
@@ -203,7 +203,7 @@ header{
 	font-size: var(--text-2xl);
 	line-height: 1.2;
 	font-style: italic;
-	color: var(--coral);
+	color: black;
 	padding-block: var(--space-m);
 	padding-right: var(--space-m);
 	padding-left: 0;
@@ -241,11 +241,10 @@ header{
   padding-inline: var(--space-2xl);
   color:var(--paper);
   padding-top:10rem;/*moves the response section into the dark background*/
-
+  padding-bottom: var(--space-2xl);
 	mark{
 		color: black;
 	}
-
 	/* RESPONSE HEADING 'ME'*/
 	h2 {
 	font-size: var(--text-5xl);
@@ -254,6 +253,16 @@ header{
 	letter-spacing: -0.3rem;
 	font-family: var(--sans);
 	color:var(--paper);
+	}
+	/* RESPONSE SUBHEADING HEADING */
+	h3 {
+	font-size: var(--text-l);
+	font-weight: 30;
+	text-transform: uppercase;
+	font-family: var(--mono);
+	color:var(--paper);
+	border-bottom: dotted white 0.1rem;
+	padding-bottom: var(--space-m)
 	}
 	/* RESPONSE BODY*/
 	p {
@@ -269,7 +278,7 @@ header{
 	font-size: var(--text-2xl);
 	line-height: 1.2;
 	font-style: italic;
-	color: var(--teal);
+	color: white;
 	padding-block: var(--space-m);
 	padding-left: var(--space-m);
 	border-left:var(--teal) solid 0.6rem;
@@ -307,7 +316,7 @@ header{
 	/* the big closing statements */
 	.statement {
 		font-family: var(--sans);
-		font-size: var(--text-3xl);
+		font-size: var(--text-2xl);
 		font-weight: 700;
 		line-height: 1.1;
 		text-transform: uppercase;
