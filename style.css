@@ -1,47 +1,47 @@
 @import url("https://fonts.googleapis.com/css2?family=Archivo:wght@400..900&family=DM+Serif+Display:ital@0;1&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&family=IBM+Plex+Mono:wght@400;500&display=swap");
 
 html {
-  font-size: 20px;
+  font-size: 20px; /*base font size that the rem refers to*/
 }
 
 /*BASE VARIABLE SYSTEM*/
 :root {
 	/*TEXT SIZING VARIABLES*/
-	--text-s: 0.875rem;
-	--text-base: 1rem;
-	--text-l: 1.25rem;
-	--text-xl: 1.5rem;
-	--text-2xl: 2rem;
-	--text-3xl: 3rem;
-	--text-4xl: 5rem;
-	--text-5xl: 6rem;
-	--text-gigantic: 8rem;
-	--watermark: 10rem;
+	--text-s: 0.875rem;/* 17.5px: labels and data: top line, nav buttons, credits, byline */
+	--text-base: 1rem;/* 20px: body text: the size everything is read at */
+	--text-l: 1.25rem;/* 25px: one step up from body: reserved for a lead-in or subheading */
+	--text-xl: 1.5rem;/* 30px: a larger step: reserved */
+	--text-2xl: 2rem;/* 40px: Rock's pull quotes: quoted ideas, pulled out of the text */
+	--text-3xl: 3rem;/* 60px: my pull quotes and the two big caps statements */
+	--text-4xl: 5rem;/* 100px: display size: used for "feeling" on small screens */
+	--text-5xl: 6rem;/* 120px: headlines: "HOOKED ON A", "ROCK:", "ME:", the footer */
+	--text-gigantic: 8rem;/* 160px: the biggest size, used only for "feeling", so the emotional word literally outweighs everything else */
+	--watermark: 10rem;/* 200px: reserved for a background watermark */
 
-	/*SPACE SIZING VARIABLES*/
-	--space-xs: 0.5rem;
-	--space-s: 1rem;
-	--space-m: 2rem;
-	--space-l: 4rem;
-	--space-xl: 8rem;
-	--space-2xl: 12rem;
-	--space-3xl: 20rem;
+	/*SPACE SIZING VARIABLES:
+	Mostly doubles at each step (0.5 → 1 → 2 → 4 → 8), so spacing stays proportional and rhythmic instead of random. Used for margins and padding.*/
+	--space-xs: 0.5rem;/* 10px: tightest gap: between nav buttons */
+	--space-s: 1rem;/* 20px: small padding: inside the top bar and buttons */
+	--space-m: 2rem;/* 40px: between paragraphs, inside pull quotes */
+	--space-l: 4rem;/* 80px: between major sections: header, article, response */
+	--space-xl: 8rem;/* 160px: large side margins */
+	--space-2xl: 12rem;/* 240px: extra-large side margins around the title */
+	--space-3xl: 20rem;/* 400px: the largest space: reserved for big dramatic gaps */
 
 	/*FONT VARIABLES*/
-	--serif: "DM Serif Display", "Iowan Old Style", Georgia, serif;
-	--body: "Source Serif 4", "Iowan Old Style", Georgia, serif;
-	--sans: "Archivo", "Helvetica Neue", Arial, sans-serif;
-	--mono: "IBM Plex Mono", "SF Mono", monospace;
+	--serif: "DM Serif Display", "Iowan Old Style", Georgia, serif;/* the expressive voice: "feeling", quotes, the feeling words- A high-contrast display serif (emotional, human) */
+	--body: "Source Serif 4", "Iowan Old Style", Georgia, serif;/* regular reading: all body paragraphs - designed for comfortable readibility*/
+	--sans: "Archivo", "Helvetica Neue", Arial, sans-serif;/* strong claims: "HOOKED ON A", "ROCK:", "ME:", the two big caps statements, the closing questions, the footer (heavy, blunt, structural) */
+	--mono: "IBM Plex Mono", "SF Mono", monospace;/* data and interface: the top line, nav buttons, credits, byline,the product names (mechanical, factual)*/
 
 	/*COLOR VARIABLES*/
-	--coral: rgb(244, 62, 6); /*represents "feeling"/"gut":the words feeling, feel, the "feeling" pull quotes, the lines under the two big statements*/
-	--bright-pink:#ff00bb; /*represents interaction so anything you can click: links, nav button hover*/
-	--teal:darkcyan; /*represents "function"/"head":lines beside the "function" pull quotes*/
-	--gold:rgb(234, 198, 137); /*represents a highlighter for the reader: quoted phrases*/
+	--coral: rgb(244, 62, 6); /*FEELING/GUT:the words feeling, feel, the "feeling" pull quotes, the lines under the two big statements*/
+	--bright-pink:#ff00bb; /*INTERACTION: anything you can click- links, nav button hover*/
+	--teal:darkcyan; /*FUNCTION/HEAD:lines beside the "function" pull quotes*/
+	--gold:rgb(234, 198, 137); /*HIGHLIGHTER FOR READER: quoted phrases, etc*/
 	--paper:rgb(240, 240, 240); /*background color for og article for clean reading and classic*/
-	--dark:rgb(15, 14, 14); /*background color for response to signify more personal deeper reflection*/
+	--dark:rgb(15, 14, 14); /*background color for response to signify more personal deeper reflection, close to black to feel like a dim room with occasional glowing words*/
 }
-
 
 body {
   background: var(--paper);
@@ -50,19 +50,33 @@ body {
   font-size: var(--text-base);
   font-family: var(--body);
 }
+
+/*OVERALL STYLISTIC ELEMENTS*/
+/*<i> ITALIC is officially for text "in an alternate voice or mood" - Feeling=mood and this is a tag I used to identify all the 'CORAL' feeling words throughout the page*/
+i{
+	color: var(--coral);
+}
+/*<b> BOLD is officially for drawing attention "for utilitarian purposes" Utilitarian=function and this is a tag I used to identify all the 'TEAL' functional words throughout the page*/
+b{
+	color: var(--teal);
+}
+/*<em> used in the correct semantic sense- stress emphasis, the word you'd lean on when speaking*/
+em{
+	font-style: italic;
+}
+/*highlighter*/
+mark{
+	background-color:var(--gold) ;
+}
+/*all links*/
 a {
   color: var(--bright-pink);
   text-decoration: underline;
 }
-em{
-	font-style: italic;
-}
-mark{
-	background-color:var(--gold) ;
-}
+
+
 
 /* HEADER (top line, title, nav)*/
-
 header{
 	/* TOP LINE */
 	.top-line {
@@ -106,7 +120,7 @@ header{
 		color:var(--coral);
 		font-family: var(--serif);
 		font-size: var(--text-gigantic);
-		text-shadow:0 0 3rem var(--teal); /*1st 0: horizontal offset(How far the shadow moves right, negative is left), 2nd 0: vertical offset(How far the shadow moves down, negative number moves it up),rem: blur(how soft and spread out the shadow is), rgba(...): color)*/
+		text-shadow:0 0 3rem var(--teal); /*1st 0: horizontal offset(How far the shadow moves right, negative is left), 2nd 0: vertical offset(How far the shadow moves down, negative number moves it up),rem: blur(how soft and spread out the shadow is), rgba(...): color) learned here: MDN https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/text-shadow*/
 		}
 		p{
 			font-family: var(--mono);
@@ -123,7 +137,6 @@ header{
 		margin-block: var(--space-l);
 		/*properties of nav buttons themselves*/
 		a{
-		display: inline-block;
 		padding: var(--space-s);
 		border: 0.04rem solid black;
 		color: black;
@@ -134,8 +147,8 @@ header{
 		}
 		/*list of nav buttons/controls positioning*/
 		li{
-			display: inline-block;
-			margin-inline-end: var(--space-s);
+			display: inline-block;/*puts the two nav links next to each other in the same line*/
+			margin-inline-end: var(--space-s);/*adds space between the two blocks*/
 		}
 	}
 	nav a:hover {
@@ -152,7 +165,7 @@ header{
   margin-inline:var(--space-xl) ;
   padding: var(--space-m);
 
-	/* ARTICLE HEADING 'ROCK' (hollow style on purpose)*/
+	/* ARTICLE HEADING 'ROCK' (hollow style on purpose, rock's article is the framework so its empty)*/
 	h2 {
 	font-size: var(--text-5xl);
 	font-weight: 900;
@@ -160,7 +173,7 @@ header{
 	letter-spacing: -0.3rem;
 	font-family: var(--sans);
 	color: transparent; /*hides fill*/
-	-webkit-text-stroke: 0.1rem black;/*adds a black outline to the text*/
+	-webkit-text-stroke: 0.1rem black;/*adds a black outline to the text, works with every browser (learned here: MDN https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/-webkit-text-stroke)*/
 	}
 	/* ARTICLE BODY*/
 	p {
@@ -180,10 +193,11 @@ header{
 	color: var(--teal);
 	padding-block: var(--space-m);
 	padding-left: var(--space-m);
-	border-left:var(--light-pink) solid 0.6rem;
+	border-left:var(--teal) solid 0.6rem;
 	}
-	/* EVER OTHER ARTICLE BLOCKQUOTE*/
-	blockquote:nth-of-type(even) {
+
+	/* FEELING ARTICLE BLOCKQUOTE*/
+	blockquote.feeling {
 	margin-block:var(--space-m);
 	font-family: var(--serif);
 	font-size: var(--text-2xl);
@@ -192,8 +206,9 @@ header{
 	color: var(--coral);
 	padding-block: var(--space-m);
 	padding-right: var(--space-m);
+	padding-left: 0;
 	border-left: 0;
-	border-right:var(--light-pink) solid 0.6rem;
+	border-right:var(--coral) solid 0.6rem;
 	text-align: right;
 	}
 	/* LAST ARTICLE BLOCKQUOTE*/
@@ -202,28 +217,34 @@ header{
 	font-family: var(--sans);
 	font-size: var(--text-3xl);
 	line-height: 1.2;
-	color: var(--black);
+	color: black;
 	padding-block: var(--space-m);
-	padding-right: var(--space-m);
 	border-left: 0;
 	border-right: 0;
-	border-bottom:var(--light-pink) solid 0.6rem;
-	text-align: justify;
+	border-bottom:var(--coral) solid 0.6rem;
 	text-transform: uppercase;
 	font-style: normal;
 	font-weight: 700;
 	}
-
+	/*changes font of last line that states the author*/
+	p:last-of-type{
+		font-family: var(--mono);
+	}
 }
 
 /* RESPONSE*/
 
 #response {
-  background:linear-gradient(to bottom, var(--paper) 0, rgb(15, 14, 14) 24rem);
+/* linear-gradient = smooth blend between colors | to bottom = direction (top → down) | var(--paper) 0 = starts paper at the top | var(--dark) 24rem = reaches dark 15rem down, then stays dark */
+  background:linear-gradient(to bottom, var(--paper) 0, rgb(15, 14, 14) 15rem); /*background gradient to signify rocks ideas blurring into mine, I agree with his POV and add more insights so its not a harsh cut-off,learned here:MDN https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/gradient/linear-gradient*/
   padding-top: var(--space-l);
   padding-inline: var(--space-2xl);
   color:var(--paper);
-  margin-block: var(--space-l);
+  padding-top:10rem;/*moves the response section into the dark background*/
+
+	mark{
+		color: black;
+	}
 
 	/* RESPONSE HEADING 'ME'*/
 	h2 {
@@ -241,58 +262,22 @@ header{
 	margin-block-end:var(--space-m);
 	font-family: var(--body);
 	}
-	q{
-		background-color:var(--goldish) ;
-	}
 	/* RESPONSE BLOCKQUOTES*/
 	blockquote {
 	margin-block:var(--space-m);
 	font-family: var(--serif);
-	font-size: var(--text-3xl);
-	line-height: 0.9;
+	font-size: var(--text-2xl);
+	line-height: 1.2;
 	font-style: italic;
 	color: var(--teal);
 	padding-block: var(--space-m);
 	padding-left: var(--space-m);
-	border-left:var(--light-pink) solid 0.6rem;
-	}
-	/* EVER OTHER RESPONSE BLOCKQUOTE*/
-	blockquote:nth-of-type(even) {
-	margin-block:var(--space-m);
-	font-family: var(--serif);
-	font-size: var(--text-3xl);
-	line-height: 0.9;
-	font-style: italic;
-	color: var(--coral);
-	padding-block: var(--space-m);
-	padding-right: var(--space-m);
-	border-left: 0;
-	border-right:var(--light-pink) solid 0.6rem;
-	text-align: right;
-	}
-	/* LAST RESPONSE BLOCKQUOTE*/
-	blockquote:last-of-type {
-	margin-block:var(--space-m);
-	font-family: var(--sans);
-	font-size: var(--text-3xl);
-	line-height: 0.9;
-	color: var(--black);
-	padding-block: var(--space-m);
-	padding-right: var(--space-m);
-	border-left: 0;
-	border-right: 0;
-	border-bottom:var(--light-pink) solid 0.6rem;
-	text-align: justify;
-	text-transform: uppercase;
-	font-style: normal;
-	font-weight: 700;
+	border-left:var(--teal) solid 0.6rem;
 	}
 
 	/* PRODUCT → FEELING LIST */
 	dl {
 		margin-block: var(--space-m);
-		background-color: var(--teal);
-		color: black;
 		padding: var(--space-m);
 
 		/* the product = data, so mono */
@@ -302,7 +287,7 @@ header{
 			font-size: var(--text-s);
 			text-transform: uppercase;
 			letter-spacing: 0.15em;
-			opacity: 60%;
+			color: var(--teal);
 		}
 
 		/* the feeling it gives you */
@@ -313,13 +298,30 @@ header{
 			font-style: italic;
 			font-size: var(--text-3xl);
 			line-height: 1;
-
 		}
 		dd:hover{
-			font-size: var(--text-3xl);
 			color: var(--coral);
-			text-shadow: 0 0 3rem black;
+			text-shadow: 0 0 1rem rgb(150, 93, 93);
 		}
+	}
+	/* the big closing statements */
+	.statement {
+		font-family: var(--sans);
+		font-size: var(--text-3xl);
+		font-weight: 700;
+		line-height: 1.1;
+		text-transform: uppercase;
+		margin-block: var(--space-m);
+		border-bottom: var(--coral);
+	}
+	.statement.function:hover{
+			color:var(--teal);
+		}
+	.statement.feeling:hover{
+			color:var(--coral);
+		}
+	p:last-of-type{
+		font-family: var(--mono);
 	}
 }
 
@@ -332,4 +334,5 @@ footer{
 	line-height: var(--space-l);
 	background: rgb(11, 11, 11);
 }
+
 
