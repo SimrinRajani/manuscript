@@ -88,8 +88,8 @@ header{
 		margin-block-end: var(--space-l);
 		text-transform: uppercase;
 		border-bottom: var(--teal) dotted 0.3rem;
-		text-align: justify; /*pushes text to left*/
-		text-align-last: justify;/*pushes text to right*/
+		text-align: justify; /*stretches the space between the course name and the date*/
+		text-align-last: justify;/*makes that stretch apply to this single line*/
 
 		/* TOP LINE TEXT*/
 		p{
@@ -125,7 +125,6 @@ header{
 		p{
 			font-family: var(--mono);
 			text-transform:uppercase;
-			font-weight: 20;
 			opacity: 60%;
 			text-align: center;
 		}
@@ -219,6 +218,7 @@ header{
 	line-height: 1.2;
 	color: black;
 	padding-block: var(--space-m);
+	padding-left:0;
 	border-left: 0;
 	border-right: 0;
 	border-bottom:var(--coral) solid 0.6rem;
@@ -235,7 +235,7 @@ header{
 /* RESPONSE*/
 
 #response {
-/* linear-gradient = smooth blend between colors | to bottom = direction (top → down) | var(--paper) 0 = starts paper at the top | var(--dark) 24rem = reaches dark 15rem down, then stays dark */
+/* linear-gradient = smooth blend between colors | to bottom = direction (top → down) | var(--paper) 0 = starts paper at the top | var(--dark) 15rem = reaches dark 15rem down, then stays dark */
   background:linear-gradient(to bottom, var(--paper) 0, rgb(15, 14, 14) 15rem); /*background gradient to signify rocks ideas blurring into mine, I agree with his POV and add more insights so its not a harsh cut-off,learned here:MDN https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/gradient/linear-gradient*/
   padding-top: var(--space-l);
   padding-inline: var(--space-2xl);
@@ -257,7 +257,6 @@ header{
 	/* RESPONSE SUBHEADING HEADING */
 	h3 {
 	font-size: var(--text-l);
-	font-weight: 30;
 	text-transform: uppercase;
 	font-family: var(--mono);
 	color:var(--paper);
@@ -321,7 +320,6 @@ header{
 		line-height: 1.1;
 		text-transform: uppercase;
 		margin-block: var(--space-m);
-		border-bottom: var(--coral);
 	}
 	.statement.function:hover{
 			color:var(--teal);
@@ -342,6 +340,7 @@ footer{
 	font-weight: bolder;
 	line-height: var(--space-l);
 	background: rgb(11, 11, 11);
+	padding-bottom:var(--space-m)
 }
 
 
