@@ -34,12 +34,12 @@ html {
 	--mono: "IBM Plex Mono", "SF Mono", monospace;
 
 	/*COLOR VARIABLES*/
-	--coral: rgb(244, 62, 6);
-	--bright-pink:#ff00bb;
-	--light-pink:#ddb1d2;
-	--teal:darkcyan;
-	--goldish:rgb(234, 198, 137);
-	--paper:rgb(240, 240, 240);
+	--coral: rgb(244, 62, 6); /*represents "feeling"/"gut":the words feeling, feel, the "feeling" pull quotes, the lines under the two big statements*/
+	--bright-pink:#ff00bb; /*represents interaction so anything you can click: links, nav button hover*/
+	--teal:darkcyan; /*represents "function"/"head":lines beside the "function" pull quotes*/
+	--gold:rgb(234, 198, 137); /*represents a highlighter for the reader: quoted phrases*/
+	--paper:rgb(240, 240, 240); /*background color for og article for clean reading and classic*/
+	--dark:rgb(15, 14, 14); /*background color for response to signify more personal deeper reflection*/
 }
 
 
@@ -54,11 +54,12 @@ a {
   color: var(--bright-pink);
   text-decoration: underline;
 }
-
 em{
 	font-style: italic;
 }
-
+mark{
+	background-color:var(--goldish) ;
+}
 
 /* HEADER (top line, title, nav)*/
 
@@ -66,15 +67,15 @@ header{
 	/* TOP LINE */
 	.top-line {
 		font-size: var(--text-s);
-		letter-spacing: 0.5rem;
+		letter-spacing: 0.3rem;
 		font-family: var(--mono);
-		position:sticky;
 		color: black;
-		background-color:var(--light-pink);
-		padding:var(--space-m);
+		padding:var(--space-s);
 		margin-block-end: var(--space-l);
 		text-transform: uppercase;
 		border-bottom: var(--teal) dotted 0.3rem;
+		text-align: justify; /*pushes text to left*/
+		text-align-last: justify;/*pushes text to right*/
 
 		/* TOP LINE TEXT*/
 		p{
@@ -83,9 +84,7 @@ header{
 		}
 		/* TOP LINE TIME*/
 		time{
-
 			display: inline-block;
-			margin-inline-start: var(--space-3xl);
 		}
 	}
 	/* TITLE */
@@ -107,6 +106,7 @@ header{
 		color:var(--coral);
 		font-family: var(--serif);
 		font-size: var(--text-gigantic);
+		text-shadow:0 0 3rem var(--teal); /*1st 0: horizontal offset(How far the shadow moves right, negative is left), 2nd 0: vertical offset(How far the shadow moves down, negative number moves it up),rem: blur(how soft and spread out the shadow is), rgba(...): color)*/
 		}
 		p{
 			font-family: var(--mono);
@@ -127,9 +127,10 @@ header{
 		padding: var(--space-s);
 		border: 0.04rem solid black;
 		color: black;
-		text-decoration: none;
+		text-decoration: none; /*takes away the hyperlink underline and turns into a button look*/
 		font-size: var(--text-s);
 		border-radius: 10%;
+		font-family: var(--mono);
 		}
 		/*list of nav buttons/controls positioning*/
 		li{
@@ -138,8 +139,9 @@ header{
 		}
 	}
 	nav a:hover {
-	background:rgb(26, 176, 176);
-	color: black;
+	color: var(--bright-pink);
+	font-weight: 600;
+	border:0.1rem solid var(--bright-pink);
 	}
 }
 
@@ -167,9 +169,7 @@ header{
 	margin-block-end:var(--space-m);
 	font-family: var(--body);
 	}
-	q{
-		background-color:var(--goldish) ;
-	}
+
 	/* ARTICLE BLOCKQUOTES*/
 	blockquote {
 	margin-block:var(--space-m);
@@ -219,7 +219,7 @@ header{
 /* RESPONSE*/
 
 #response {
-  background:linear-gradient(to bottom, var(--paper) 0, black 24rem);
+  background:linear-gradient(to bottom, var(--paper) 0, rgb(15, 14, 14) 24rem);
   padding-top: var(--space-l);
   padding-inline: var(--space-2xl);
   color:var(--paper);
@@ -296,7 +296,6 @@ footer{
 	font-size: var(--text-5xl);
 	color: rgb(38, 38, 38);
 	text-transform: uppercase;
-	margin-inline: -20%;
 	font-family: var(--sans);
 	font-weight: bolder;
 	line-height: var(--space-l);
