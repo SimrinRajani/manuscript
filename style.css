@@ -58,7 +58,7 @@ em{
 	font-style: italic;
 }
 mark{
-	background-color:var(--goldish) ;
+	background-color:var(--gold) ;
 }
 
 /* HEADER (top line, title, nav)*/
@@ -288,9 +288,40 @@ header{
 	font-weight: 700;
 	}
 
+	/* PRODUCT → FEELING LIST */
+	dl {
+		margin-block: var(--space-m);
+		background-color: var(--teal);
+		color: black;
+		padding: var(--space-m);
+
+		/* the product = data, so mono */
+		dt {
+			margin-inline-start: var(--space-2xl);
+			font-family: var(--mono);
+			font-size: var(--text-s);
+			text-transform: uppercase;
+			letter-spacing: 0.15em;
+			opacity: 60%;
+		}
+
+		/* the feeling it gives you */
+		dd {
+			margin-inline-start: var(--space-3xl);
+			margin-block-end: var(--space-m);
+			font-family: var(--serif);
+			font-style: italic;
+			font-size: var(--text-3xl);
+			line-height: 1;
+
+		}
+		dd:hover{
+			font-size: var(--text-3xl);
+			color: var(--coral);
+			text-shadow: 0 0 3rem black;
+		}
+	}
 }
-
-
 
 footer{
 	font-size: var(--text-5xl);
@@ -301,3 +332,4 @@ footer{
 	line-height: var(--space-l);
 	background: rgb(11, 11, 11);
 }
+
