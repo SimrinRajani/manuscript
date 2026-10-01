@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Archivo:wght@400..900&family=DM+Serif+Display:ital@0;1&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&family=IBM+Plex+Mono:wght@400;500&display=swap");
+/* fonts: Archivo (sans), DM Serif Display (display serif), Source Serif 4 (body), IBM Plex Mono (mono) */
 
 html {
   font-size: 20px; /*base font size that the rem refers to*/
@@ -6,27 +7,26 @@ html {
 
 /*BASE VARIABLE SYSTEM*/
 :root {
-	/*TEXT SIZING VARIABLES*/
-	--text-s: 0.875rem;/* 17.5px: labels and data: top line, nav buttons, credits, byline */
-	--text-base: 1rem;/* 20px: body text: the size everything is read at */
-	--text-l: 1.25rem;/* 25px: one step up from body: reserved for a lead-in or subheading */
-	--text-xl: 1.5rem;/* 30px: a larger step: reserved */
-	--text-2xl: 2rem;/* 40px: Rock's pull quotes: quoted ideas, pulled out of the text */
-	--text-3xl: 3rem;/* 60px: my pull quotes and the two big caps statements */
-	--text-4xl: 5rem;/* 100px: display size: used for "feeling" on small screens */
-	--text-5xl: 6rem;/* 120px: headlines: "HOOKED ON A", "ROCK:", "ME:", the footer */
+	/*TEXT SIZING VARIABLES: small steps for reading, big jumps for display*/
+	--text-s: 0.875rem;/* 17.5px: labels,data*/
+	--text-base: 1rem;/* 20px: body */
+	--text-l: 1.25rem;/* 25px: subheading */
+	--text-xl: 1.5rem;/* 30px: a larger step */
+	--text-2xl: 2rem;/* 40px: block quotes,statements*/
+	--text-3xl: 3rem;/* 60px: big statments, feelings list */
+	--text-4xl: 5rem;/* 100px*/
+	--text-5xl: 6rem;/* 120px: headlines, footer watermark */
 	--text-gigantic: 8rem;/* 160px: the biggest size, used only for "feeling", so the emotional word literally outweighs everything else */
-	--watermark: 10rem;/* 200px: reserved for a background watermark */
 
 	/*SPACE SIZING VARIABLES:
 	Mostly doubles at each step (0.5 → 1 → 2 → 4 → 8), so spacing stays proportional and rhythmic instead of random. Used for margins and padding.*/
-	--space-xs: 0.5rem;/* 10px: tightest gap: between nav buttons */
-	--space-s: 1rem;/* 20px: small padding: inside the top bar and buttons */
-	--space-m: 2rem;/* 40px: between paragraphs, inside pull quotes */
-	--space-l: 4rem;/* 80px: between major sections: header, article, response */
-	--space-xl: 8rem;/* 160px: large side margins */
-	--space-2xl: 12rem;/* 240px: extra-large side margins around the title */
-	--space-3xl: 20rem;/* 400px: the largest space: reserved for big dramatic gaps */
+	--space-xs: 0.5rem;/* 10px */
+	--space-s: 1rem;/* 20px */
+	--space-m: 2rem;/* 40px */
+	--space-l: 4rem;/* 80px */
+	--space-xl: 8rem;/* 160px */
+	--space-2xl: 12rem;/* 240px */
+	--space-3xl: 20rem;/* 400px */
 
 	/*FONT VARIABLES*/
 	--serif: "DM Serif Display", "Iowan Old Style", Georgia, serif;/* the expressive voice: "feeling", quotes, the feeling words- A high-contrast display serif (emotional, human) */
@@ -35,9 +35,9 @@ html {
 	--mono: "IBM Plex Mono", "SF Mono", monospace;/* data and interface: the top line, nav buttons, credits, byline,the product names (mechanical, factual)*/
 
 	/*COLOR VARIABLES*/
-	--coral: rgb(244, 62, 6); /*FEELING/GUT:the words feeling, feel, the "feeling" pull quotes, the lines under the two big statements*/
+	--coral: rgb(244, 62, 6); /*FEELING:the words feeling, feel, the "feeling" quotes, the lines next to feeling quotes*/
 	--bright-pink:#ff00bb; /*INTERACTION: anything you can click- links, nav button hover*/
-	--teal:darkcyan; /*FUNCTION/HEAD:lines beside the "function" pull quotes*/
+	--teal:darkcyan; /*FUNCTION: words and lines beside the "function" quotes*/
 	--gold:rgb(234, 198, 137); /*HIGHLIGHTER FOR READER: quoted phrases, etc*/
 	--paper:rgb(240, 240, 240); /*background color for og article for clean reading and classic*/
 	--dark:rgb(15, 14, 14); /*background color for response to signify more personal deeper reflection, close to black to feel like a dim room with occasional glowing words*/
@@ -51,7 +51,7 @@ body {
   font-family: var(--body);
 }
 
-/*OVERALL STYLISTIC ELEMENTS*/
+/*OVERALL STYLISTIC ELEMENTS (apply to the whole page) */
 /*<i> ITALIC is officially for text "in an alternate voice or mood" - Feeling=mood and this is a tag I used to identify all the 'CORAL' feeling words throughout the page*/
 i{
 	color: var(--coral);
@@ -78,23 +78,24 @@ a {
 
 /* HEADER (top line, title, nav)*/
 header{
-	/* TOP LINE */
+	/* TOP LINE : the course name (left) and date (right)
+	Design role: a quiet "document label", like the stamp on a file. It's metadata, the most factual layer of the page, so it stays small and calm and lets the title be the first emotional moment.*/
 	.top-line {
 		font-size: var(--text-s);
 		letter-spacing: 0.3rem;
 		font-family: var(--mono);
 		color: black;
-		padding:var(--space-s);
-		margin-block-end: var(--space-l);
+		padding:var(--space-s); /** 20px of space INSIDE the bar, on all four sides, so the text doesn't touch the edges or the dotted line. */
+		margin-block-end: var(--space-l); /* 80px of space BELOW the bar, before the title, "block-end" = the bottom */
 		text-transform: uppercase;
 		border-bottom: var(--teal) dotted 0.3rem;
-		text-align: justify; /*stretches the space between the course name and the date*/
-		text-align-last: justify;/*makes that stretch apply to this single line*/
+		text-align: justify; /* justified text stretches the space between words so the line fills the full width-only two "words": the course name and the date. All the extra space goes between them, which pushes one to the left edge and one to the right edge. */
+		text-align-last: justify;/*browsers never justify the last line of a paragraph, since this is only one line needed this part to make that stretch apply to this single line*/
 
 		/* TOP LINE TEXT*/
 		p{
-			display: inline-block;
-			margin:0;
+			display: inline-block;/*makes it sit in the same line*/
+			margin:0;/*removes extra space around the p blocks*/
 		}
 		/* TOP LINE TIME*/
 		time{
@@ -103,6 +104,7 @@ header{
 	}
 	/* TITLE */
 	hgroup {
+		/*HOOKED ON A*/
 		h1 {
 		text-transform: uppercase;
 		font-size: var(--text-5xl);
@@ -114,7 +116,8 @@ header{
 		margin-block: var(--space-l);
 		letter-spacing: -0.045em;
 		}
-		h1 em {
+		/*FEELING*/
+		em {
 		text-transform: lowercase;
 		font-style: italic;
 		color:var(--coral);
@@ -122,6 +125,7 @@ header{
 		font-size: var(--text-gigantic);
 		text-shadow:0 0 3rem var(--teal); /*1st 0: horizontal offset(How far the shadow moves right, negative is left), 2nd 0: vertical offset(How far the shadow moves down, negative number moves it up),rem: blur(how soft and spread out the shadow is), rgba(...): color) learned here: MDN https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/text-shadow*/
 		}
+		/*SUBHEADING*/
 		p{
 			font-family: var(--mono);
 			text-transform:uppercase;
@@ -151,7 +155,7 @@ header{
 		}
 	}
 	nav a:hover {
-	color: var(--bright-pink);
+	color: var(--bright-pink);/*pink for interaction*/
 	font-weight: 600;
 	border:0.1rem solid var(--bright-pink);
 	}
@@ -194,7 +198,6 @@ header{
 	padding-left: var(--space-m);
 	border-left:var(--teal) solid 0.6rem;
 	}
-
 	/* FEELING ARTICLE BLOCKQUOTE*/
 	blockquote.feeling {
 	margin-block:var(--space-m);
@@ -204,30 +207,29 @@ header{
 	font-style: italic;
 	color: black;
 	padding-block: var(--space-m);
-	padding-right: var(--space-m);
+	padding-right: var(--space-m); /*creates space between quote and border*/
 	padding-left: 0;
 	border-left: 0;
 	border-right:var(--coral) solid 0.6rem;
 	text-align: right;
 	}
 	/* LAST ARTICLE BLOCKQUOTE*/
-	blockquote:last-of-type {
+	blockquote:last-of-type { /*targets only the last blockquote in this section*/
 	margin-block:var(--space-m);
 	font-family: var(--sans);
 	font-size: var(--text-3xl);
 	line-height: 1.2;
 	color: black;
 	padding-block: var(--space-m);
-	padding-left:0;
-	border-left: 0;
-	border-right: 0;
+	padding-left:0;/*undoes the rule for left side spacing applied to all blockquotes*/
+	border-left: 0; /*undoes the rule from left teal border applied to all blockquotes*/
 	border-bottom:var(--coral) solid 0.6rem;
 	text-transform: uppercase;
 	font-style: normal;
 	font-weight: 700;
 	}
 	/*changes font of last line that states the author*/
-	p:last-of-type{
+	p:last-of-type{/*targets last p in the section*/
 		font-family: var(--mono);
 	}
 }
@@ -238,12 +240,12 @@ header{
 /* linear-gradient = smooth blend between colors | to bottom = direction (top → down) | var(--paper) 0 = starts paper at the top | var(--dark) 15rem = reaches dark 15rem down, then stays dark */
   background:linear-gradient(to bottom, var(--paper) 0, rgb(15, 14, 14) 15rem); /*background gradient to signify rocks ideas blurring into mine, I agree with his POV and add more insights so its not a harsh cut-off,learned here:MDN https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/gradient/linear-gradient*/
   padding-top: var(--space-l);
-  padding-inline: var(--space-2xl);
+  padding-inline: var(--space-2xl);/*used padding here instead of margin because wanted to keep the black background full bleed*/
   color:var(--paper);
   padding-top:10rem;/*moves the response section into the dark background*/
   padding-bottom: var(--space-2xl);
 	mark{
-		color: black;
+		color: black;/*added black text for marks on this section so the text is readable on the gold highlighter background*/
 	}
 	/* RESPONSE HEADING 'ME'*/
 	h2 {
@@ -252,9 +254,9 @@ header{
 	text-transform: uppercase;
 	letter-spacing: -0.3rem;
 	font-family: var(--sans);
-	color:var(--paper);
+	color:var(--paper); /*fully filled in and not hollow because it shows that rock's article was the framework and my ideas and reflection filled the empty space*/
 	}
-	/* RESPONSE SUBHEADING HEADING */
+	/* RESPONSE SUBHEADING HEADING (quick personal tangent)*/
 	h3 {
 	font-size: var(--text-l);
 	text-transform: uppercase;
